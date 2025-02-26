@@ -1,0 +1,805 @@
+/* Resetando as margens e padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+
+/* Estilo do header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #0b4b8b;
+  color: white;
+  padding: 15px 60px;
+  z-index: 1000;
+  transition: top 0.3s ease, background-color 0.3s ease;
+  font-weight: bold;
+}
+
+header.light-mode {
+  background-color: #f4f4f4;
+  color: #333;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header.hidden {
+  top: -110px;
+}
+
+
+
+
+
+
+/* Ícones e alinhamento */
+.left img {
+  height: 65px;
+}
+
+.center nav ul {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+}
+
+.center nav ul li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.center nav ul li img {
+  height: 25px;
+}
+
+.right a img {
+  height: 35px;
+  margin-left: 10px;
+}
+
+/* Menu hambúrguer */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+
+
+
+
+
+/* Estilo da imagem abaixo do header */
+.hero {
+  background-image: url('/imagens/wallpaper.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  padding: 20px;
+  position: relative;
+}
+
+.hero-content {
+  text-align: left;
+  max-width: 40%;
+  padding: 0 5%;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin: 5px 0;
+}
+
+
+
+
+
+
+/* Estilo da Seção de Palestras */
+.centralizado {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.stats-card {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stat-item {
+  background: linear-gradient(to bottom, #A3C9F0, #5C8BB2);
+  padding: 20px;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.stat-item:nth-child(1) {
+  background: #A7D8FF;
+}
+
+.stat-item:nth-child(2) {
+  background: #80C8FF;
+}
+
+.stat-item:nth-child(3) {
+  background: #59B8FF;
+}
+
+.stat-item:nth-child(4) {
+  background: #33A8FF;
+}
+
+.stat-item:nth-child(5) {
+  background: #0098FF;
+}
+
+.stat-item:nth-child(6) {
+  background: #0078CC;
+}
+
+.stat-item:nth-child(7) {
+  background: #005899;
+}
+
+.stat-item:hover {
+  transform: scale(1.1);
+}
+
+/* Estilo do Vídeo - continuação do palestras */
+#video-container {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+  border-radius: 8px;
+}
+
+#close-button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background: red;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* Sobre o curso de mediunidade */
+.section {
+  padding: 2rem;
+  margin: 2rem 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Estilização da seção */
+.seção {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+/* Blocos de conteúdo */
+.conteudo {
+  margin-bottom: 30px;
+}
+
+/* Botão de toggle */
+.conteudo>button {
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  color: #007BFF;
+  transition: color 0.3s;
+}
+
+.conteudo>button:hover {
+  color: #0056b3;
+}
+
+/* Ícone de seta */
+.conteudo>button .seta {
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+/* Texto oculto */
+.conteudo>div {
+  display: none;
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Quando o texto está visível */
+.conteudo.ativo>div {
+  display: block;
+}
+
+/* Seta rotacionada para baixo quando ativo */
+.conteudo.ativo>button .seta {
+  transform: rotate(90deg);
+}
+
+
+
+
+
+
+/* Container da galeria */
+.gallery-container {
+  text-align: center;
+  margin: 0 auto;
+  /* Garante centralização */
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* Sombra para o container */
+}
+
+/* Estilo do título */
+.gallery-container h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: #000;
+  margin-bottom: 20px;
+  letter-spacing: normal;
+  /* Espaçamento entre letras padrão */
+}
+
+/* Estilo da galeria */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+/* Itens da galeria */
+.gallery-item {
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 30vh;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Efeito hover nas fotos */
+.gallery-item:hover {
+  transform: translateY(-5px);
+  /* Efeito de elevação */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Estilo do modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Conteúdo do modal */
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Botão de fechar o modal */
+.close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+
+
+
+
+/* Voluntariado - parallax */
+.parallax-section {
+  position: relative;
+  background-image: url('/imagens/caridade.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  /* Centraliza verticalmente */
+  justify-content: center;
+  /* Centraliza horizontalmente */
+}
+
+.text-container {
+  padding: 20px;
+  max-width: 600px;
+  width: 30%;
+  margin: 0 auto;
+  /* Centraliza horizontalmente */
+  text-align: center;
+  /* Justificado para a esquerda */
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  background: rgba(0, 0, 0, 0);
+  /* Fundo transparente */
+}
+
+.text-container h2 {
+  margin-bottom: 15px;
+  font-size: 2.5rem;
+}
+
+.text-container p {
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 1px;
+  /* Espaçamento entre as letras */
+}
+
+/* Estilo do botão Saiba Mais */
+.btn-saiba-mais {
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  background-color: #fbbd02;
+  color: #333;
+  border: none;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.btn-saiba-mais:hover {
+  background-color: #e09e01;
+  transform: scale(1.05);
+  /* Efeito de aumento suave */
+}
+
+.btn-saiba-mais:focus {
+  outline: none;
+}
+
+
+
+
+
+
+/* Seção de doações */
+.doar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f4c721;
+  padding: 40px 40px;
+  height: auto;
+  /* Ajusta para adaptar ao conteúdo dinamicamente */
+}
+
+.doar img {
+  max-width: 80px;
+  flex-shrink: 0;
+  /* Evita que a imagem diminua excessivamente */
+}
+
+.doar div {
+  flex: 1;
+  /* Garante que o texto ocupe o espaço disponível */
+  margin-left: 20px;
+}
+
+.doar h1 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333333;
+  margin: 0;
+}
+
+.doar p {
+  font-size: 16px;
+  color: #333333;
+  margin: 10px 0 0 0;
+}
+
+.doar button {
+  background-color: #333333;
+  color: #ffffff;
+  padding: 15px 25px;
+  border: 2px solid #333333;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  white-space: nowrap;
+  /* Impede que o texto quebre no botão */
+  flex-shrink: 0;
+  /* Garante que o botão mantenha seu tamanho */
+  transition: background-color 0.3s, border-color 0.3s;
+  /* Adiciona uma transição suave */
+}
+
+.doar button a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.doar button:hover {
+  background-color: #555555;
+  border: 2px solid #555555;
+}
+
+
+
+
+
+
+/* Seção footer - links rápidos e contato */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 50px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+  text-align: center;
+}
+
+.footer-col h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.footer-col p,
+.footer-col ul,
+.footer-col a {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #bbb;
+}
+
+/* Links Rápidos e Siga-nos - Ajustar para listagem vertical */
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li,
+.social-links a {
+  margin-bottom: 10px;
+}
+
+.footer-col a {
+  text-decoration: none;
+  color: #bbb;
+  transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+
+.center nav ul li a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.center nav ul li a:hover {
+  color: aqua;
+}
+
+/* Estilo dos links sociais */
+.social-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-links a {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: #bbb;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #fff;
+}
+
+/* Estilo do Copy */
+.footer-copy {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #bbb;
+}
+
+.footer-copy p {
+  margin: 0;
+}
+
+
+
+
+
+
+/* Tratando de Recursividade | Responsividade */
+@media (min-width: 1100px) and (max-width: 1400px) {
+  .hero-content {
+    max-width: 45%;
+  }
+
+  .right {
+    display: none;
+  }
+}
+
+
+@media (min-width: 901px) and (max-width: 1199px) {
+  .hero-content {
+    max-width: 55%;
+  }
+}
+
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  .center nav ul {
+    opacity: 0;
+    visibility: hidden;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #0b4b8b;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 15px 5%;
+    height: 110vh;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+
+  .center nav ul.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .text-container {
+    width: 80%;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  #palestras h2 {
+    text-align: center;
+  }
+
+  .stats-card {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  .gallery-item {
+    height: 25vh;
+  }
+}
+
+
+@media (max-width: 900px) {
+  .hero {
+    justify-content: center;
+    text-align: center;
+    background-image: url('/imagens/wallpaper-1.png');
+  }
+
+  .hero-content {
+    max-width: 80%;
+    text-align: center;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .center nav ul {
+    opacity: 0;
+    visibility: hidden;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #0b4b8b;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 15px 5%;
+    height: 110vh;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+  }
+
+  .center nav ul.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .text-container {
+    width: 100%;
+  }
+
+  .text-container h2 {
+    font-size: 35px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .doar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doar img {
+    margin-bottom: 20px;
+  }
+
+  .doar div {
+    margin: 0;
+  }
+
+  .doar button {
+    margin-top: 20px;
+  }
+
+  .gallery-item {
+    height: 15vh;
+  }
+
+  .gallery {
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .gallery-container h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}
+
+
+@media (max-width: 500px) {
+  #palestras h2 {
+    text-align: center;
+  }
+
+  .stats-card {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
